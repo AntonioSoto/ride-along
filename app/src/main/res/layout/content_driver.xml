@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.sprint.ride_along.DriverActivity"
+    tools:showIn="@layout/activity_driver">
+
+    <TextView
+        android:id="@+id/textView_AboutYou"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sobre tí"
+        android:background="#e5e9f2"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/editText_RegisterPhone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/editText_RegisterPhone"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="Teléfono"
+        android:inputType="phone"
+        app:layout_constraintBottom_toTopOf="@+id/textView_Time"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_AboutYou"/>
+
+    <TextView
+        android:id="@+id/textView_Time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Horario"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintBottom_toTopOf="@+id/textView_De"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editText_RegisterPhone"/>
+
+    <TextView
+        android:id="@+id/textView_De"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="De"
+        app:layout_constraintBottom_toTopOf="@+id/textView_A"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_Time"
+        app:layout_constraintHorizontal_bias="0.2"/>
+
+    <EditText
+        android:id="@+id/editText_RegisterTime1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        app:layout_constraintBottom_toTopOf="@+id/textView_A"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/textView_De"
+        app:layout_constraintTop_toBottomOf="@id/textView_Time"/>
+
+    <TextView
+        android:id="@+id/textView_A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A"
+        app:layout_constraintBottom_toTopOf="@+id/textView_AboutCar"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_De"
+        app:layout_constraintHorizontal_bias="0.2"/>
+
+    <EditText
+        android:id="@+id/editText_RegisterTime2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        app:layout_constraintBottom_toTopOf="@+id/textView_AboutCar"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/textView_A"
+        app:layout_constraintTop_toBottomOf="@id/textView_De"/>
+
+    <TextView
+        android:id="@+id/textView_AboutCar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sobre tu coche"
+        android:background="#e5e9f2"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_Models"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_A"/>
+
+    <Spinner
+        android:id="@+id/spinner_Models"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/editText_RegisterPlate"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_AboutCar"
+        app:layout_constraintHorizontal_bias="0.2" />
+
+    <EditText
+        android:id="@+id/editText_RegisterPlate"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Placa"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_Seats"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_Models"/>
+
+    <Spinner
+        android:id="@+id/spinner_Seats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/button_CarPhoto"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editText_RegisterPlate"
+        app:layout_constraintHorizontal_bias="0.2" />
+
+    <Button
+        android:id="@+id/button_CarPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Foto del coche"
+        app:layout_constraintBottom_toTopOf="@+id/button_RegisterContinue"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_Seats"/>
+
+    <Button
+        android:id="@+id/button_RegisterContinue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continuar"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_CarPhoto"
+        android:onClick="driverMap"/>
+
+</android.support.constraint.ConstraintLayout>
