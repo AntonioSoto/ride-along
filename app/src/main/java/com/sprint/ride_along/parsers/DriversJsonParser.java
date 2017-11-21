@@ -39,7 +39,7 @@ public class DriversJsonParser {
 
     protected Driver parseDriver(JSONObject driverModel) {
        
-        int internalKey = Math.toIntExact((long) driverModel.get("pk"));
+        int internalKey = (int) ((long) driverModel.get("pk"));
 
         JSONObject driverInfo = (JSONObject) driverModel.get("fields");
         String studentId = (String) driverInfo.get("student_id");
@@ -47,7 +47,7 @@ public class DriversJsonParser {
         String carColor = (String) driverInfo.get("car_color");
         String licensePlate = (String) driverInfo.get("license_plate");
         String phonenumber = (String) driverInfo.get("phonenumber");
-        int capacity = Math.toIntExact((long) driverInfo.get("capacity"));
+        int capacity = (int) ((long) driverInfo.get("capacity"));
         String entryHour = ((String) driverInfo.get("entry_hour")).substring(0, 5);
         String exitHour = ((String) driverInfo.get("exit_hour")).substring(0, 5);
 
