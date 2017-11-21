@@ -23,7 +23,7 @@ public class RuteJsonParser {
     
     private JSONParser parser = new JSONParser();
     
-    public ArrayList parseRute(String rutePoints) throws ParseException{
+    public ArrayList<LatLng> parseRute(String rutePoints) throws ParseException{
         
         JSONArray points = (JSONArray) this.parser.parse(rutePoints);
         Iterator iterator = points.iterator();
