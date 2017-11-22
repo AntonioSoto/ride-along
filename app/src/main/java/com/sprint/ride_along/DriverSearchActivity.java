@@ -1,5 +1,6 @@
 package com.sprint.ride_along;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +16,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.sprint.ride_along.model.Driver;
+
+import java.util.ArrayList;
 
 public class DriverSearchActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -79,5 +83,13 @@ public class DriverSearchActivity extends AppCompatActivity implements OnMapRead
         }
         currentMarker.setPosition(userPoint);
         searchButton.setVisibility(View.VISIBLE);
+    }
+
+    public void searchDrivers(View view){
+
+        Intent intent = new Intent(this, SearchResultsActivity.class);
+        intent.putExtra("latitude", this.currentMarker.getPosition().latitude);
+        intent.putExtra("longitude", this.currentMarker.getPosition().longitude);
+        startActivity(intent);
     }
 }

@@ -5,6 +5,8 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.sprint.ride_along.DriverSearchActivity;
+import com.sprint.ride_along.SearchResultsActivity;
 import com.sprint.ride_along.model.Driver;
 import com.sprint.ride_along.parsers.DriversJsonParser;
 
@@ -27,10 +29,12 @@ import java.util.ArrayList;
 public class DriverSearchTask extends AsyncTask<Void, Void, String> {
 
     private LatLng userPoint;
-    //private Activity activity
+    private SearchResultsActivity activity;
 
-    public DriverSearchTask(LatLng userPoint) {
+    public DriverSearchTask(LatLng userPoint, SearchResultsActivity activity) {
+
         this.userPoint = userPoint;
+        this.activity = activity;
     }
 
     @Override
@@ -66,16 +70,13 @@ public class DriverSearchTask extends AsyncTask<Void, Void, String> {
 
         if (!result.equals("Problemas!")) {
 
-            ArrayList<Driver> drivers;
+            ArrayList<Driver> drivers = null;
             try {
                 drivers = new DriversJsonParser().parseDriversList(result);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            //this.activity.displayDrivers(drivers);
-        }
-        else{
-            //this.activity.displayDrivers(new ArrayList());
+            this.activity.displayDrivers(drivers);
         }
     }
 }

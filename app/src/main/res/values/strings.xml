@@ -19,4 +19,5 @@
         <item>4</item>
     </string-array>
     <string name="title_activity_driver_map">DriverMapActivity</string>
+    <string name="title_activity_search_results">SearchResultsActivity</string>
 </resources>
