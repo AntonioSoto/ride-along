@@ -2,8 +2,6 @@ package com.sprint.ride_along;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -31,7 +29,7 @@ public class SelectActivity extends AppCompatActivity {
 
     public void passenger(View view){
 
-        Intent intent = new Intent(this, PassengerActivity.class);
+        Intent intent = new Intent(this, DriverSearchActivity.class);
         startActivity(intent);
     }
 

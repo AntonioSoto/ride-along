@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.sprint.ride_along.PassengerActivity"
-    tools:showIn="@layout/activity_passenger">
+    tools:context="com.sprint.ride_along.DriverSearchActivity"
+    tools:showIn="@layout/activity_driver_search">
 
 </android.support.constraint.ConstraintLayout>
