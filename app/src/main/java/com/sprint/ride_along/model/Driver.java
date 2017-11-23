@@ -1,10 +1,12 @@
 package com.sprint.ride_along.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jorge A. Cano
  */
-public class Driver {
+public class Driver implements Serializable{
 
     private int internalKey;
     private String name;

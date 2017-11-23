@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.sprint.ride_along.DriverDetailsActivity;
 import com.sprint.ride_along.parsers.DriversJsonParser;
 import com.sprint.ride_along.parsers.RuteJsonParser;
 
@@ -23,10 +24,11 @@ import java.util.ArrayList;
 public class DriverRuteTask extends AsyncTask<Void, Void, String> {
 
     private int driverKey;
-    //Activity activity;
+    private DriverDetailsActivity activity;
 
-    public DriverRuteTask(int driverKey) {
+    public DriverRuteTask(int driverKey, DriverDetailsActivity activity) {
         this.driverKey = driverKey;
+        this.activity = activity;
     }
 
     @Override
@@ -61,16 +63,16 @@ public class DriverRuteTask extends AsyncTask<Void, Void, String> {
 
         if (!result.equals("Problemas!")) {
 
-            ArrayList<LatLng> rutePoints;
+            ArrayList<LatLng> rutePoints = null;
             try {
                 rutePoints = new RuteJsonParser().parseRute(result);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            //this.activity.displayDrivers(drivers);
+            this.activity.displayRute(rutePoints);
         }
         else{
-            //this.activity.displayDrivers(new ArrayList());
+            this.activity.displayRute(null);
         }
     }
 
