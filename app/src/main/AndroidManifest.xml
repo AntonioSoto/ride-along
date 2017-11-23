@@ -55,6 +55,10 @@
         <activity
             android:name=".DriverDetailsActivity"
             android:label="@string/title_activity_driver_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DriverProfileActivity"
+            android:label="@string/title_activity_driver_profile"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

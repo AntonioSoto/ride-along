@@ -4,7 +4,6 @@
     <string name="title_activity_passenger">Punto de Encuentro</string>
     <string name="title_activity_driver">DriverActivity</string>
     <string-array name="models_array">
-        <item>Modelos</item>
         <item>BMW</item>
         <item>Chevrolet</item>
         <item>Ferrari</item>
@@ -12,7 +11,6 @@
         <item>Honda</item>
     </string-array>
     <string-array name="seats_array">
-        <item>Asientos</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -21,4 +19,5 @@
     <string name="title_activity_driver_map">DriverMapActivity</string>
     <string name="title_activity_search_results">SearchResultsActivity</string>
     <string name="title_activity_driver_details">DriverDetailsActivity</string>
+    <string name="title_activity_driver_profile">DriverProfileActivity</string>
 </resources>
