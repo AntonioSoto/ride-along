@@ -51,17 +51,18 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView_Time"
-        app:layout_constraintHorizontal_bias="0.2"/>
+        app:layout_constraintHorizontal_bias="0.4"/>
 
     <EditText
         android:id="@+id/editText_RegisterTime1"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:inputType="time"
+        android:inputType="datetime"
         app:layout_constraintBottom_toTopOf="@+id/textView_A"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/textView_De"
-        app:layout_constraintTop_toBottomOf="@id/textView_Time"/>
+        app:layout_constraintTop_toBottomOf="@id/textView_Time"
+        app:layout_constraintHorizontal_bias="0.1"/>
 
     <TextView
         android:id="@+id/textView_A"
@@ -72,7 +73,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView_De"
-        app:layout_constraintHorizontal_bias="0.2"/>
+        app:layout_constraintHorizontal_bias="0.4"/>
 
     <EditText
         android:id="@+id/editText_RegisterTime2"
@@ -82,12 +83,14 @@
         app:layout_constraintBottom_toTopOf="@+id/textView_AboutCar"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/textView_A"
-        app:layout_constraintTop_toBottomOf="@id/textView_De"/>
+        app:layout_constraintTop_toBottomOf="@id/textView_De"
+        app:layout_constraintHorizontal_bias="0.13"/>
 
     <TextView
         android:id="@+id/textView_AboutCar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Sobre tu coche"
         android:background="#e5e9f2"
         android:textAlignment="center"
@@ -95,6 +98,17 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView_A"/>
+
+    <TextView
+        android:id="@+id/textView_Model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modelo"
+        app:layout_constraintBottom_toTopOf="@id/editText_RegisterPlate"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/spinner_Models"
+        app:layout_constraintTop_toBottomOf="@id/textView_AboutCar"
+        app:layout_constraintHorizontal_bias="0.6"/>
 
     <Spinner
         android:id="@+id/spinner_Models"
@@ -104,13 +118,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_AboutCar"
-        app:layout_constraintHorizontal_bias="0.2" />
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <EditText
         android:id="@+id/editText_RegisterPlate"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Placa"
+        android:hint="Placa"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/spinner_Seats"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -125,7 +139,18 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editText_RegisterPlate"
-        app:layout_constraintHorizontal_bias="0.2" />
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <TextView
+        android:id="@+id/textView_Seats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Asientos"
+        app:layout_constraintBottom_toTopOf="@id/button_CarPhoto"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/spinner_Seats"
+        app:layout_constraintTop_toBottomOf="@id/editText_RegisterPlate"
+        app:layout_constraintHorizontal_bias="0.6"/>
 
     <Button
         android:id="@+id/button_CarPhoto"
