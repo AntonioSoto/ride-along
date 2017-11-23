@@ -69,6 +69,7 @@ public class DriverRegistryTask extends AsyncTask<Void, Void, Integer> {
 
         String json = "{\n" +
                 "\t\"student_id\": \""+ this.driver.getStudentId() +"\",\n" +
+                "\t\"name\": \""+ this.driver.getName() +"\",\n" +
                 "\t\"phonenumber\": \""+ this.driver.getPhonenumber() +"\",\n" +
                 "\t\"car_brand\": \""+ this.driver.getCarBrand() +"\",\n" +
                 "\t\"car_color\": \""+ this.driver.getCarColor() +"\",\n" +

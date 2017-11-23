@@ -7,6 +7,7 @@ package com.sprint.ride_along.model;
 public class Driver {
 
     private int internalKey;
+    private String name;
     private String studentId;
     private String carBrand;
     private String carColor;
@@ -16,7 +17,7 @@ public class Driver {
     private String entryHour;
     private String exitHour;
 
-    public Driver(int internalKey, String studentId, String carBrand, String carColor, String licensePlate, String phonenumber, int capacity, String entryHour, String exitHour) {
+    public Driver(int internalKey, String name, String studentId, String carBrand, String carColor, String licensePlate, String phonenumber, int capacity, String entryHour, String exitHour) {
         this.internalKey = internalKey;
         this.studentId = studentId;
         this.carBrand = carBrand;
@@ -26,6 +27,7 @@ public class Driver {
         this.capacity = capacity;
         this.entryHour = entryHour;
         this.exitHour = exitHour;
+        this.name = name;
     }
 
     
@@ -92,6 +94,8 @@ public class Driver {
     public String getExitHour() {
         return exitHour;
     }
-    
-    
+
+    public String getName() {
+        return name;
+    }
 }

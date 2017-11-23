@@ -13,13 +13,13 @@
 
         <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/result_driver_car_image"
-            android:layout_width="99dp"
+            android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/placeholder_car"
-            app:civ_border_color="#000"
+            app:civ_border_color="#000000"
             app:civ_border_width="2dp"
             app:civ_shadow="false"
-            app:civ_shadow_color="#000"
+            app:civ_shadow_color="#000000"
             app:civ_shadow_radius="10" />
 
         <LinearLayout
@@ -52,22 +52,24 @@
                     android:textStyle="bold"/>
 
                 <TextView
+                    android:id="@+id/result_available_seats"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="2"
-                    android:textSize="@dimen/result_text_size"
                     android:layout_marginTop="@dimen/result_text_margin"
+                    android:text="2"
                     android:textColor="@color/colorAccent"
-                    android:textStyle="bold"/>
+                    android:textSize="@dimen/result_text_size"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="De 15:30 a 20:00"
-                    android:textSize="@dimen/result_text_size"
-                    android:layout_marginTop="@dimen/result_text_margin"/>
+            <TextView
+                android:id="@+id/result_driver_schedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/result_text_margin"
+                android:text="De 15:30 a 20:00"
+                android:textSize="@dimen/result_text_size" />
 
         </LinearLayout>
     </LinearLayout>

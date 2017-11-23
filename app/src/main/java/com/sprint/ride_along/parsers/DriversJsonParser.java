@@ -43,6 +43,7 @@ public class DriversJsonParser {
 
         JSONObject driverInfo = (JSONObject) driverModel.get("fields");
         String studentId = (String) driverInfo.get("student_id");
+        String name = (String) driverInfo.get("name");
         String carBrand = (String) driverInfo.get("car_brand");
         String carColor = (String) driverInfo.get("car_color");
         String licensePlate = (String) driverInfo.get("license_plate");
@@ -53,6 +54,7 @@ public class DriversJsonParser {
 
         return new Driver(
                 internalKey,
+                name,
                 studentId,
                 carBrand,
                 carColor,
