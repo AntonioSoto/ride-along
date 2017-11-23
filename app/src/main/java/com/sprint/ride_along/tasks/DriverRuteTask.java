@@ -63,7 +63,7 @@ public class DriverRuteTask extends AsyncTask<Void, Void, String> {
 
         if (!result.equals("Problemas!")) {
 
-            ArrayList<LatLng> rutePoints = null;
+            ArrayList<LatLng> rutePoints = new ArrayList<>();
             try {
                 rutePoints = new RuteJsonParser().parseRute(result);
             } catch (ParseException e) {
@@ -72,7 +72,7 @@ public class DriverRuteTask extends AsyncTask<Void, Void, String> {
             this.activity.displayRute(rutePoints);
         }
         else{
-            this.activity.displayRute(null);
+            this.activity.displayRute(new ArrayList());
         }
     }
 

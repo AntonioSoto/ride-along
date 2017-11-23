@@ -1,21 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.sprint.ride_along.DriverDetailsActivity"
     tools:showIn="@layout/activity_driver_details">
 
-    <fragment
-        android:id="@+id/rute_map_fragment"
-        android:name="com.google.android.gms.maps.MapFragment"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="2dp" />
+        android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/details_driver_car_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/placeholder_car"
+                app:civ_border_color="#000000"
+                app:civ_border_width="2dp"
+                app:civ_shadow="false"
+                app:civ_shadow_color="#000000"
+                app:civ_shadow_radius="10" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp">
+
+
+                <TextView
+                    android:id="@+id/details_driver_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="José Ramón San Cristobal"
+                    android:textSize="@dimen/result_text_size"
+                    android:textColor="@color/dark"
+                    android:layout_marginTop="@dimen/result_text_margin"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lugares disponibles: "
+                        android:textSize="@dimen/result_text_size"
+                        android:textColor="@color/dark"
+                        android:layout_marginTop="@dimen/result_text_margin"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/details_available_seats"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/result_text_margin"
+                        android:text="2"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/result_text_size"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/details_driver_schedule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/result_text_margin"
+                    android:text="De 15:30 a 20:00"
+                    android:textSize="@dimen/result_text_size" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/whatsapp"
+                android:tint="#000"/>
+
+            <TextView
+                android:id="@+id/driver_phonenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="9465429"
+                android:textColor="@color/phonenumberBlue"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Detalles del coche:"
+                android:textColor="@color/grayish"/>
+
+            <TextView
+                android:id="@+id/details_car"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Honda Civic Plateado (YAA-67-90)"
+                android:textColor="@color/dark"/>
+
+
+        </LinearLayout>
+
+
+        <fragment
+            android:id="@+id/rute_map_fragment"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="377dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp"
+            tools:layout_editor_absoluteX="61dp"
+            tools:layout_editor_absoluteY="246dp" />
+    </LinearLayout>
+
+</LinearLayout>

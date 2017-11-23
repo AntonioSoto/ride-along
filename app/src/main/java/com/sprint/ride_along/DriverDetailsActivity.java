@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -43,6 +44,26 @@ public class DriverDetailsActivity extends AppCompatActivity implements OnMapRea
 
     private void displayDriverDetails() {
 
+        TextView nameLabel = findViewById(R.id.details_driver_name);
+        TextView availableSeatsLabel = findViewById(R.id.details_available_seats);
+        TextView scheduleLabel = findViewById(R.id.details_driver_schedule);
+        TextView phonenumber = findViewById(R.id.driver_phonenumber);
+        TextView carDetails = findViewById(R.id.details_car);
+
+        nameLabel.setText(this.driver.getName());
+
+        availableSeatsLabel.setText(String.valueOf(this.driver.getCapacity()));
+
+        String schedule = "De " + this.driver.getEntryHour() + " a " + this.driver.getExitHour();
+        scheduleLabel.setText(schedule);
+
+        phonenumber.setText(this.driver.getPhonenumber());
+
+        String carDetailsText = this.driver.getCarBrand() + " "
+                + this.driver.getCarColor() + " (" +
+                this.driver.getLicensePlate() +")";
+
+        carDetails.setText(carDetailsText);
 
     }
 
