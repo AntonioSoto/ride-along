@@ -1,5 +1,6 @@
 package com.sprint.ride_along;
 
+import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -83,6 +84,10 @@ public class DriverMapActivity extends AppCompatActivity implements OnMapReadyCa
 
     public void registerDriver(View view){
 
+        Intent registerIntent = getIntent();
+        // getStringExtra
 
+        Intent intent = new Intent(this, DriverProfileActivity.class);
+        startActivity(intent);
     }
 }

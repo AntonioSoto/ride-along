@@ -53,7 +53,7 @@
             android:label="@string/title_activity_search_results"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".tasks.DriverProfileActivity"
+            android:name=".DriverProfileActivity"
             android:label="@string/title_activity_driver_profile"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
