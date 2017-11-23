@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <com.mikhaellopez.circularimageview.CircularImageView
@@ -23,20 +23,23 @@
             app:civ_shadow_radius="10" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="187dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginLeft="5dp">
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical">
 
 
             <TextView
                 android:id="@+id/result_driver_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/result_text_margin"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
                 android:text="José Ramón San Cristobal"
                 android:textSize="@dimen/result_text_size"
-                android:layout_marginTop="@dimen/result_text_margin"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -46,10 +49,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/result_text_margin"
                     android:text="Lugares disponibles: "
                     android:textSize="@dimen/result_text_size"
-                    android:layout_marginTop="@dimen/result_text_margin"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/result_available_seats"
@@ -70,8 +73,15 @@
                 android:layout_marginTop="@dimen/result_text_margin"
                 android:text="De 15:30 a 20:00"
                 android:textSize="@dimen/result_text_size" />
-
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/map_icon" />
+
     </LinearLayout>
 
 </LinearLayout>
