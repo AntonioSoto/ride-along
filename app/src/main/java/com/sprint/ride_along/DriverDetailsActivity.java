@@ -1,5 +1,7 @@
 package com.sprint.ride_along;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -102,5 +104,16 @@ public class DriverDetailsActivity extends AppCompatActivity implements OnMapRea
                     .snippet("")
             );
         }
+    }
+
+    public void sendWhatsApp(View view) {
+
+
+        String smsNumber= this.driver.getPhonenumber() + "@s.whatsapp.net";
+        Uri uri = Uri.parse("smsto:" + smsNumber);
+        Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
+        //i.putExtra("sms_body", "Prakash Gajera");
+        intent.setPackage("com.whatsapp");
+        startActivity(intent);
     }
 }
