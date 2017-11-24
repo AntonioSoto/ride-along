@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.sprint.ride_along.model.Driver;
+
 public class DriverActivity extends AppCompatActivity {
 
     private Spinner models;
@@ -60,6 +62,8 @@ public class DriverActivity extends AppCompatActivity {
             String time1 = ((EditText)findViewById(R.id.editText_RegisterTime1)).getText().toString();
             String time2 = ((EditText)findViewById(R.id.editText_RegisterTime2)).getText().toString();
             String plate = ((EditText)findViewById(R.id.editText_RegisterPlate)).getText().toString();
+
+            //Driver driver = new Driver();
 
             Intent intent = new Intent(this, DriverMapActivity.class);
             intent.putExtra("phone", phone);

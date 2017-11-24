@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimary">#184779</color>
     <color name="colorPrimaryDark">#002E5F</color>
+    <color name="colorPrimaryLight">#3B6593</color>
     <color name="colorAccent">#C79316</color>
     <color name="phonenumberBlue">#00A6FF</color>
     <color name="dark">#1A1A1A</color>

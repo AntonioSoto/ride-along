@@ -18,11 +18,10 @@
         app:layout_constraintVertical_bias="0.073"/>
 
     <EditText
-        android:id="@+id/editText_Matricula"
+        android:id="@+id/login_Matricula"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:ems="10"
         android:hint="Matrícula"
         android:inputType="text"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -30,26 +29,25 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView_RideLogo" />
 
     <EditText
-        android:id="@+id/editText_Password"
+        android:id="@+id/login_Password"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="Contraseña"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_Matricula"
+        app:layout_constraintTop_toBottomOf="@+id/login_Matricula"
         app:layout_constraintVertical_bias="0.01" />
 
     <Button
         android:id="@+id/button_Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#99d9ea"
+        android:textColor="@color/colorPrimaryLight"
         android:background="#00000000"
         android:text="Ingresar"
-        app:layout_constraintTop_toBottomOf="@+id/editText_Password"
+        app:layout_constraintTop_toBottomOf="@+id/login_Password"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
