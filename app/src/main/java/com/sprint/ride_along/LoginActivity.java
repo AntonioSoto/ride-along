@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import com.sprint.ride_along.tasks.DriverInfoTask;
 
+import java.util.regex.Pattern;
+
 public class LoginActivity extends AppCompatActivity {
 
     private boolean studentIdExists;
@@ -57,13 +59,11 @@ public class LoginActivity extends AppCompatActivity {
     private boolean isStudentIdValid(){
 
         String studentId = ((EditText) findViewById(R.id.login_Matricula)).getText().toString();
-        new DriverInfoTask(studentId, this);
 
-        return studentIdExists;
+        String regex = "a\\d{7}";
+        Pattern pattern = Pattern.compile(regex);
+
+        return pattern.matcher(studentId).find();
     }
 
-    public void studentIdExists(boolean existence){
-
-        this.studentIdExists = existence;
-    }
 }

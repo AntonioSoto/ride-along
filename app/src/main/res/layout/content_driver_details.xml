@@ -78,6 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/result_text_margin"
+                    android:textColor="@color/grayish"
                     android:text="De 15:30 a 20:00"
                     android:textSize="@dimen/result_text_size" />
 
@@ -90,13 +91,12 @@
             android:orientation="horizontal"
             android:layout_marginTop="20dp">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:srcCompat="@drawable/whatsapp"
-                android:tint="#000"
-                android:onClick="sendWhatsApp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:text="Contacto:" />
 
             <TextView
                 android:id="@+id/driver_phonenumber"
@@ -107,6 +107,14 @@
                 android:text="9465429"
                 android:textColor="@color/phonenumberBlue"
                 android:onClick="sendWhatsApp"/>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/whatsapp_logo_sm"
+                android:onClick="sendWhatsApp"/>
+
 
         </LinearLayout>
 
@@ -134,6 +142,13 @@
         </LinearLayout>
 
 
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ruta del conductor:"
+            android:textColor="@color/grayish"/>
+
         <fragment
             android:id="@+id/rute_map_fragment"
             android:name="com.google.android.gms.maps.MapFragment"
@@ -141,7 +156,6 @@
             android:layout_height="377dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="20dp"
             tools:layout_editor_absoluteX="61dp"
             tools:layout_editor_absoluteY="246dp" />
     </LinearLayout>

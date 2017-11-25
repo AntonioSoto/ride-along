@@ -71,22 +71,22 @@ public class DriverInfoTask extends AsyncTask<Void, Void, String> {
 
         if (!result.equals("404")) {
 
-            this.activity.studentIdExists(true);
+            //this.activity.studentIdExists(true);
 
-            /*DriverDetailsParser driverInfo = null;
+            DriverDetailsParser driverInfo = null;
 
             try {
                 driverInfo = new DriverDetailsParser(result);
             } catch (ParseException e) {
                 e.printStackTrace();
-            }*/
+            }
 
 
             //this.activity.displayDriverInfo(driverInfo.getDriver(), driverInfo.getRute());
         }
         else{
-            //this.activity.displayDrivers(new ArrayList());
-            this.activity.studentIdExists(false);
+            //this.activity.displayDriverInfo(null);
+            //this.activity.studentIdExists(false);
         }
     }
 }
