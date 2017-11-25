@@ -3,6 +3,7 @@ package com.sprint.ride_along.tasks;
 import android.os.AsyncTask;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.sprint.ride_along.DriverMapActivity;
 import com.sprint.ride_along.model.Driver;
 
 import org.apache.http.HttpResponse;
@@ -26,11 +27,13 @@ public class DriverRegistryTask extends AsyncTask<Void, Void, Integer> {
 
     private Driver driver;
     private ArrayList<LatLng> rute;
+    private DriverMapActivity activity;
     //private Activity activity;
 
-    public DriverRegistryTask(Driver driver, ArrayList<LatLng> rute) {
+    public DriverRegistryTask(Driver driver, ArrayList<LatLng> rute, DriverMapActivity activity) {
         this.driver = driver;
         this.rute = rute;
+        this.activity = activity;
     }
 
     @Override
@@ -103,6 +106,8 @@ public class DriverRegistryTask extends AsyncTask<Void, Void, Integer> {
 
     @Override
     protected void onPostExecute(Integer result) {
+
+        this.activity.displayMessage(result);
 
         switch (result){
             case 200:

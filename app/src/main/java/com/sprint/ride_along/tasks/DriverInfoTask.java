@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.sprint.ride_along.LoginActivity;
+import com.sprint.ride_along.SelectActivity;
 import com.sprint.ride_along.parsers.DriverDetailsParser;
 import com.sprint.ride_along.parsers.RuteJsonParser;
 
@@ -24,10 +25,10 @@ import java.util.ArrayList;
 public class DriverInfoTask extends AsyncTask<Void, Void, String> {
 
     private String studentId;
-    private LoginActivity activity;
+    private SelectActivity activity;
     //private Activity activity
 
-    public DriverInfoTask(String studentId, LoginActivity activity) {
+    public DriverInfoTask(String studentId, SelectActivity activity) {
 
         this.studentId = studentId;
         this.activity = activity;
@@ -71,8 +72,6 @@ public class DriverInfoTask extends AsyncTask<Void, Void, String> {
 
         if (!result.equals("404")) {
 
-            //this.activity.studentIdExists(true);
-
             DriverDetailsParser driverInfo = null;
 
             try {
@@ -81,12 +80,12 @@ public class DriverInfoTask extends AsyncTask<Void, Void, String> {
                 e.printStackTrace();
             }
 
-
             //this.activity.displayDriverInfo(driverInfo.getDriver(), driverInfo.getRute());
+            this.activity.setupDriverInfo( driverInfo.getDriver() );
         }
         else{
             //this.activity.displayDriverInfo(null);
-            //this.activity.studentIdExists(false);
+            this.activity.setupDriverInfo( null );
         }
     }
 }

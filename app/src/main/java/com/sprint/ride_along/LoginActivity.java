@@ -13,8 +13,6 @@ import java.util.regex.Pattern;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private boolean studentIdExists;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +33,8 @@ public class LoginActivity extends AppCompatActivity {
         else if( isStudentIdValid() ){
 
             Intent intent = new Intent(this, SelectActivity.class);
+            String studentId = ((EditText) findViewById(R.id.login_Matricula)).getText().toString();
+            intent.putExtra("studentId", studentId);
             startActivity(intent);
         }
         else{

@@ -17,16 +17,23 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.sprint.ride_along.model.Driver;
+import com.sprint.ride_along.tasks.DriverRegistryTask;
+
+import java.util.ArrayList;
 
 public class DriverMapActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private Button registerButton;
+    private ArrayList<LatLng> rutes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_map);
+
+        rutes = new ArrayList<>();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_DriverMap);
         setSupportActionBar(toolbar);
@@ -79,15 +86,28 @@ public class DriverMapActivity extends AppCompatActivity implements OnMapReadyCa
                     .snippet("")
         ).setPosition(userPoint);
 
+        // Se añade mínimo un punto para hacer el registro.
+        rutes.add(userPoint);
+
         registerButton.setVisibility(View.VISIBLE);
     }
 
     public void registerDriver(View view){
 
-        Intent registerIntent = getIntent();
-        // getStringExtra
+        Driver driver = (Driver) getIntent().getSerializableExtra("driver");
+        new DriverRegistryTask(driver, rutes, this);
 
         Intent intent = new Intent(this, DriverProfileActivity.class);
+        intent.putExtra("driver", driver );
         startActivity(intent);
+    }
+
+    public void displayMessage(int result){
+
+        Toast.makeText(
+                this,
+                "Código: "+result,
+                Toast.LENGTH_LONG
+        ).show();
     }
 }

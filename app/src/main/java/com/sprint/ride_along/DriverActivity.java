@@ -58,20 +58,32 @@ public class DriverActivity extends AppCompatActivity {
 
         if( !areTextFieldsEmpty() ){
 
-            String phone = ((EditText)findViewById(R.id.editText_RegisterPhone)).getText().toString();
-            String time1 = ((EditText)findViewById(R.id.editText_RegisterTime1)).getText().toString();
-            String time2 = ((EditText)findViewById(R.id.editText_RegisterTime2)).getText().toString();
-            String plate = ((EditText)findViewById(R.id.editText_RegisterPlate)).getText().toString();
+            int internalKey = 0;
+            String name = "Nombre";
+            String studentId = getIntent().getStringExtra("studentId");
+            String carBrand = models.getSelectedItem().toString();
+            String carColor = "Color";
+            String licensePlate = ((EditText)findViewById(R.id.editText_RegisterPlate)).getText().toString();
+            String phonenumber = ((EditText)findViewById(R.id.editText_RegisterPhone)).getText().toString();
+            int capacity = Integer.valueOf(seats.getSelectedItem().toString());
+            String entryHour = ((EditText)findViewById(R.id.editText_RegisterTime1)).getText().toString();
+            String exitHour = ((EditText)findViewById(R.id.editText_RegisterTime2)).getText().toString();
 
-            //Driver driver = new Driver();
+            Driver driver = new Driver(
+                    internalKey,
+                    name,
+                    studentId,
+                    carBrand,
+                    carColor,
+                    licensePlate,
+                    phonenumber,
+                    capacity,
+                    entryHour,
+                    exitHour
+            );
 
             Intent intent = new Intent(this, DriverMapActivity.class);
-            intent.putExtra("phone", phone);
-            intent.putExtra("time1", time1);
-            intent.putExtra("time2", time2);
-            intent.putExtra("model", models.getSelectedItem().toString());
-            intent.putExtra("plate", plate);
-            intent.putExtra("seat", seats.getSelectedItem().toString());
+            intent.putExtra("driver", driver);
             startActivity(intent);
         }
         else{
