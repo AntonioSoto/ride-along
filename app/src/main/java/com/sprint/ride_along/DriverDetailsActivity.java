@@ -74,8 +74,11 @@ public class DriverDetailsActivity extends AppCompatActivity implements OnMapRea
 
         mMap = googleMap;
 
-        CameraUpdate meridaCam = CameraUpdateFactory.newLatLngZoom(new LatLng(20.9802, -89.621935), 12);
-        mMap.moveCamera(meridaCam);
+        CameraUpdate fmatCam = CameraUpdateFactory.newLatLngZoom(
+                new LatLng(21.047410, -89.644225),
+                12
+        );
+        mMap.moveCamera(fmatCam);
 
         new DriverRuteTask(this.driver.getInternalKey(), this).execute();
 
@@ -90,6 +93,8 @@ public class DriverDetailsActivity extends AppCompatActivity implements OnMapRea
                 .snippet("")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         );
+
+
     }
 
     public void displayRute(ArrayList<LatLng> rutePoints) {

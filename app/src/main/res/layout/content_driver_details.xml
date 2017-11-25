@@ -7,7 +7,10 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.sprint.ride_along.DriverDetailsActivity"
-    tools:showIn="@layout/activity_driver_details">
+    tools:showIn="@layout/activity_driver_details"
+    android:layout_marginTop="@dimen/negative_space"
+    android:layout_marginLeft="@dimen/negative_space"
+    android:layout_marginRight="@dimen/negative_space">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -112,17 +115,23 @@
                 android:id="@+id/imageView"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_marginLeft="5dp"
                 app:srcCompat="@drawable/whatsapp_logo_sm"
                 android:onClick="sendWhatsApp"/>
 
-
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="17dp"
+            android:background="@color/spacerBackground"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView2"

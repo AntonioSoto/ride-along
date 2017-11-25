@@ -7,4 +7,5 @@
     <color name="phonenumberBlue">#00A6FF</color>
     <color name="dark">#1A1A1A</color>
     <color name="grayish">#918C82</color>
+    <color name="spacerBackground">#C0CCDA</color>
 </resources>
