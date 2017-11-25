@@ -89,16 +89,16 @@ public class DriverRegistryTask extends AsyncTask<Void, Void, Integer> {
 
             if(iterator.hasNext()) {
 
-                json.concat("\t\t{\"latitude\": \"" + point.latitude + "\", \"longitude\": \"" +
+                json = json.concat("\t\t{\"latitude\": \"" + point.latitude + "\", \"longitude\": \"" +
                         point.longitude + "\"},\n");
             } else{
 
-                json.concat("\t\t{\"latitude\": \"" + point.latitude + "\", \"longitude\": \""+
+                json = json.concat("\t\t{\"latitude\": \"" + point.latitude + "\", \"longitude\": \""+
                         point.longitude + "\"}\n");
             }
         }
 
-        json.concat("\t]\t\n" +
+        json = json.concat("\t]\t\n" +
                 "}");
 
         return json;
@@ -107,17 +107,15 @@ public class DriverRegistryTask extends AsyncTask<Void, Void, Integer> {
     @Override
     protected void onPostExecute(Integer result) {
 
-        this.activity.displayMessage(result);
-
         switch (result){
             case 200:
-                //send ok
+                this.activity.displayDriverDetails();
                 break;
             case 409:
-                //already registered
+                this.activity.displayMessage(result);
                 break;
             default:
-                //error
+                this.activity.displayMessage(result);
                 break;
         }
     }

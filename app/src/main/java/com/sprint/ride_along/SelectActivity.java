@@ -28,7 +28,7 @@ public class SelectActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        new DriverInfoTask(studentId, this);
+        new DriverInfoTask(studentId, this).execute();
     }
 
     @Override

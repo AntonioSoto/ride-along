@@ -27,6 +27,7 @@ public class DriverMapActivity extends AppCompatActivity implements OnMapReadyCa
     private GoogleMap mMap;
     private Button registerButton;
     private ArrayList<LatLng> rutes;
+    private Driver driver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,8 @@ public class DriverMapActivity extends AppCompatActivity implements OnMapReadyCa
 
         registerButton = (Button) findViewById(R.id.button_RegisterDriver);
         registerButton.setVisibility(View.GONE);
+
+        this.driver = (Driver) getIntent().getSerializableExtra("driver");
     }
 
     @Override
@@ -94,12 +97,7 @@ public class DriverMapActivity extends AppCompatActivity implements OnMapReadyCa
 
     public void registerDriver(View view){
 
-        Driver driver = (Driver) getIntent().getSerializableExtra("driver");
-        new DriverRegistryTask(driver, rutes, this);
-
-        Intent intent = new Intent(this, DriverProfileActivity.class);
-        intent.putExtra("driver", driver );
-        startActivity(intent);
+        new DriverRegistryTask(driver, rutes, this).execute();
     }
 
     public void displayMessage(int result){
@@ -109,5 +107,12 @@ public class DriverMapActivity extends AppCompatActivity implements OnMapReadyCa
                 "Código: "+result,
                 Toast.LENGTH_LONG
         ).show();
+    }
+
+    public void displayDriverDetails() {
+
+        Intent intent = new Intent(this, DriverProfileActivity.class);
+        intent.putExtra("driver", driver );
+        startActivity(intent);
     }
 }
