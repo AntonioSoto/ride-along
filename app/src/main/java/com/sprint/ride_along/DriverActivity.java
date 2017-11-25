@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.sprint.ride_along.model.Driver;
 
+import java.util.regex.Pattern;
+
 public class DriverActivity extends AppCompatActivity {
 
     private Spinner models;
@@ -56,7 +58,15 @@ public class DriverActivity extends AppCompatActivity {
 
     public void driverMap(View view){
 
-        if( !areTextFieldsEmpty() ){
+        if( areTextFieldsEmpty() ){
+
+            Toast.makeText(
+                    this,
+                    "Faltan campos por completar",
+                    Toast.LENGTH_SHORT
+            ).show();
+        }
+        else if( isHourFormatValid() ){
 
             int internalKey = 0;
             String name = "Nombre";
@@ -87,9 +97,10 @@ public class DriverActivity extends AppCompatActivity {
             startActivity(intent);
         }
         else{
+
             Toast.makeText(
                     this,
-                    "Faltan campos por completar",
+                    "El formato de la hora no es válido",
                     Toast.LENGTH_SHORT
             ).show();
         }
@@ -106,5 +117,17 @@ public class DriverActivity extends AppCompatActivity {
                 time1.compareTo("")==0 ||
                 time2.compareTo("")==0 ||
                 plate.compareTo("")==0;
+    }
+
+    private boolean isHourFormatValid(){
+
+        String time1 = ((EditText)findViewById(R.id.editText_RegisterTime1)).getText().toString();
+        String time2 = ((EditText)findViewById(R.id.editText_RegisterTime2)).getText().toString();
+
+        String regex = "([01]?[0-9]|2[0-3]):[0-5][0-9]";
+        Pattern pattern = Pattern.compile(regex);
+
+        return pattern.matcher(time1).find() &&
+                pattern.matcher(time2).find();
     }
 }
