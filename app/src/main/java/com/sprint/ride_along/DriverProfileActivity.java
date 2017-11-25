@@ -1,5 +1,6 @@
 package com.sprint.ride_along;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -45,8 +47,17 @@ public class DriverProfileActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        onBackPressed();
+        this.onBackPressed();
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(this, SelectActivity.class);
+        Driver driver = (Driver) getIntent().getSerializableExtra("driver");
+        intent.putExtra("studentId", driver.getStudentId());
+        startActivity(intent);
     }
 
     private void displayDriverInfo( Driver driver ){

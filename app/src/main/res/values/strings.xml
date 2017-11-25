@@ -2,7 +2,7 @@
     <string name="app_name">Ride-Along</string>
     <string name="title_activity_select">Ride-Along</string>
     <string name="title_activity_passenger">Punto de Encuentro</string>
-    <string name="title_activity_driver">DriverActivity</string>
+    <string name="title_activity_driver">Registro de Conductor</string>
     <string-array name="models_array">
         <item>BMW</item>
         <item>Chevrolet</item>
@@ -16,8 +16,8 @@
         <item>3</item>
         <item>4</item>
     </string-array>
-    <string name="title_activity_driver_map">DriverMapActivity</string>
+    <string name="title_activity_driver_map">Ruta</string>
     <string name="title_activity_search_results">Conductores Disponibles</string>
     <string name="title_activity_driver_details">Detalles del Viaje</string>
-    <string name="title_activity_driver_profile">DriverProfileActivity</string>
+    <string name="title_activity_driver_profile">Detalles de Perfil</string>
 </resources>
