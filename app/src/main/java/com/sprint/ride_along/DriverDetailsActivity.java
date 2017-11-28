@@ -8,6 +8,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -55,6 +57,13 @@ public class DriverDetailsActivity extends AppCompatActivity implements OnMapRea
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 
@@ -127,11 +136,30 @@ public class DriverDetailsActivity extends AppCompatActivity implements OnMapRea
 
     public void sendWhatsApp(View view) {
 
+        messageDriver();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.message_driver) {
+            this.messageDriver();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void messageDriver() {
 
         String smsNumber= this.driver.getPhonenumber() + "@s.whatsapp.net";
         Uri uri = Uri.parse("smsto:" + smsNumber);
         Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
-        //i.putExtra("sms_body", "Prakash Gajera");
         intent.setPackage("com.whatsapp");
         startActivity(intent);
     }
