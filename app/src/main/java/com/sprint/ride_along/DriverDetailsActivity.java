@@ -1,6 +1,7 @@
 package com.sprint.ride_along;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -36,12 +37,25 @@ public class DriverDetailsActivity extends AppCompatActivity implements OnMapRea
         setContentView(R.layout.activity_driver_details);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
+        TextView phonenumber = findViewById(R.id.driver_phonenumber);
+        phonenumber.setPaintFlags(phonenumber.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
 
         this.driver = (Driver) getIntent().getSerializableExtra("selectedDriver");
         displayDriverDetails();
 
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.rute_map_fragment);
         mapFragment.getMapAsync(this);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     private void displayDriverDetails() {

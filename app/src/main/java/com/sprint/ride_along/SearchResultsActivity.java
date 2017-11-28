@@ -30,6 +30,10 @@ public class SearchResultsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search_results);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         LatLng userPoint = new LatLng(
                 getIntent().getDoubleExtra("latitude", 0),
@@ -38,6 +42,12 @@ public class SearchResultsActivity extends AppCompatActivity {
 
         setClickListener();
         new DriverSearchTask(userPoint, this).execute();
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     private void setClickListener() {
