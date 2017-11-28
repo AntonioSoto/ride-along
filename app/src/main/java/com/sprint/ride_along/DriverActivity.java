@@ -31,7 +31,7 @@ public class DriverActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        models = (Spinner) findViewById(R.id.spinner_Models);
+        models = (Spinner) findViewById(R.id.register_spinnerModels);
         ArrayAdapter<CharSequence> adapterModels = ArrayAdapter.createFromResource(
                 this,
                 R.array.models_array,
@@ -40,7 +40,7 @@ public class DriverActivity extends AppCompatActivity {
         adapterModels.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         models.setAdapter(adapterModels);
 
-        seats = (Spinner) findViewById(R.id.spinner_Seats);
+        seats = (Spinner) findViewById(R.id.register_spinnerSeats);
         ArrayAdapter<CharSequence> adapterSeats = ArrayAdapter.createFromResource(
                 this,
                 R.array.seats_array,
@@ -73,11 +73,11 @@ public class DriverActivity extends AppCompatActivity {
             String studentId = getIntent().getStringExtra("studentId");
             String carBrand = models.getSelectedItem().toString();
             String carColor = "Color";
-            String licensePlate = ((EditText)findViewById(R.id.editText_RegisterPlate)).getText().toString();
-            String phonenumber = ((EditText)findViewById(R.id.editText_RegisterPhone)).getText().toString();
+            String licensePlate = ((EditText)findViewById(R.id.register_Plate)).getText().toString();
+            String phonenumber = ((EditText)findViewById(R.id.register_Phone)).getText().toString();
             int capacity = Integer.valueOf(seats.getSelectedItem().toString());
-            String entryHour = ((EditText)findViewById(R.id.editText_RegisterTime1)).getText().toString();
-            String exitHour = ((EditText)findViewById(R.id.editText_RegisterTime2)).getText().toString();
+            String entryHour = ((EditText)findViewById(R.id.register_Time1)).getText().toString();
+            String exitHour = ((EditText)findViewById(R.id.register_Time2)).getText().toString();
 
             Driver driver = new Driver(
                     internalKey,
@@ -108,10 +108,10 @@ public class DriverActivity extends AppCompatActivity {
 
     private boolean areTextFieldsEmpty(){
 
-        String phone = ((EditText)findViewById(R.id.editText_RegisterPhone)).getText().toString();
-        String time1 = ((EditText)findViewById(R.id.editText_RegisterTime1)).getText().toString();
-        String time2 = ((EditText)findViewById(R.id.editText_RegisterTime2)).getText().toString();
-        String plate = ((EditText)findViewById(R.id.editText_RegisterPlate)).getText().toString();
+        String phone = ((EditText)findViewById(R.id.register_Phone)).getText().toString();
+        String time1 = ((EditText)findViewById(R.id.register_Time1)).getText().toString();
+        String time2 = ((EditText)findViewById(R.id.register_Time2)).getText().toString();
+        String plate = ((EditText)findViewById(R.id.register_Plate)).getText().toString();
 
         return phone.compareTo("")==0 ||
                 time1.compareTo("")==0 ||
@@ -121,8 +121,8 @@ public class DriverActivity extends AppCompatActivity {
 
     private boolean isHourFormatValid(){
 
-        String time1 = ((EditText)findViewById(R.id.editText_RegisterTime1)).getText().toString();
-        String time2 = ((EditText)findViewById(R.id.editText_RegisterTime2)).getText().toString();
+        String time1 = ((EditText)findViewById(R.id.register_Time1)).getText().toString();
+        String time2 = ((EditText)findViewById(R.id.register_Time2)).getText().toString();
 
         String regex = "([01]?[0-9]|2[0-3]):[0-5][0-9]";
         Pattern pattern = Pattern.compile(regex);

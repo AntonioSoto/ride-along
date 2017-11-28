@@ -22,154 +22,169 @@
 
     <TextView
         android:id="@+id/driverProfile_Name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:text="Nombre"
+        android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/driverProfile_Phone"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/driverProfile_AboutYou"
-        app:layout_constraintHorizontal_bias="0.2"/>
+        app:layout_constraintTop_toBottomOf="@id/driverProfile_AboutYou"/>
 
     <TextView
         android:id="@+id/driverProfile_Phone"
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:text="Teléfono"
-        app:layout_constraintBottom_toTopOf="@+id/driverProfile_Time"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/driverProfile_EnterHour"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/driverProfile_Name"/>
 
     <TextView
-        android:id="@+id/driverProfile_Time"
-        android:layout_width="wrap_content"
+        android:id="@+id/driverProfile_EnterHour"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Horario"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintBottom_toTopOf="@+id/driverProfile_De"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Hora de entrada: "
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/driverProfile_ExitHour"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/driverProfile_Phone"/>
 
     <TextView
-        android:id="@+id/driverProfile_De"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="De"
-        app:layout_constraintBottom_toTopOf="@+id/driverProfile_A"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/driverProfile_Time"
-        app:layout_constraintHorizontal_bias="0.4"/>
-
-    <TextView
         android:id="@+id/driverProfile_Time1"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="00:00"
-        app:layout_constraintBottom_toTopOf="@+id/driverProfile_A"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/driverProfile_De"
-        app:layout_constraintTop_toBottomOf="@id/driverProfile_Time"
-        app:layout_constraintHorizontal_bias="0.1"/>
-
-    <TextView
-        android:id="@+id/driverProfile_A"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="A"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="00:00"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/driverProfile_ExitHour"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/driverProfile_Phone"
+        app:layout_constraintHorizontal_bias="1.0"/>
+
+    <TextView
+        android:id="@+id/driverProfile_ExitHour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Hora de salida: "
+        android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/driverProfile_AboutCar"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/driverProfile_De"
-        app:layout_constraintHorizontal_bias="0.4"/>
+        app:layout_constraintTop_toBottomOf="@id/driverProfile_EnterHour"/>
 
     <TextView
         android:id="@+id/driverProfile_Time2"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:text="00:00"
+        android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/driverProfile_AboutCar"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/driverProfile_A"
-        app:layout_constraintTop_toBottomOf="@id/driverProfile_De"
-        app:layout_constraintHorizontal_bias="0.13"/>
+        app:layout_constraintLeft_toRightOf="@id/driverProfile_ExitHour"
+        app:layout_constraintTop_toBottomOf="@id/driverProfile_EnterHour"
+        app:layout_constraintHorizontal_bias="1.0"/>
 
     <TextView
         android:id="@+id/driverProfile_AboutCar"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:text="Sobre tu coche"
         android:background="#e5e9f2"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/driverProfile_Model"
+        app:layout_constraintBottom_toTopOf="@+id/driverProfile_carPhoto"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/driverProfile_A"/>
+        app:layout_constraintTop_toBottomOf="@id/driverProfile_ExitHour"/>
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/driverProfile_carPhoto"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/placeholder_car"
+        app:layout_constraintBottom_toTopOf="@+id/driverProfile_Plate"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/driverProfile_AboutCar"/>
+
+    <TextView
+        android:id="@+id/driverProfile_Plate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Placa"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/driverProfile_ModelText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/driverProfile_carPhoto"/>
 
     <TextView
         android:id="@+id/driverProfile_ModelText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Modelo"
-        app:layout_constraintBottom_toTopOf="@id/driverProfile_Plate"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Modelo: "
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/driverProfile_SeatText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/driverProfile_Model"
-        app:layout_constraintTop_toBottomOf="@id/driverProfile_AboutCar"
-        app:layout_constraintHorizontal_bias="0.55"/>
+        app:layout_constraintTop_toBottomOf="@id/driverProfile_Plate"/>
 
     <TextView
         android:id="@+id/driverProfile_Model"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:text="modelo"
-        app:layout_constraintBottom_toTopOf="@+id/driverProfile_Plate"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/driverProfile_AboutCar"
-        app:layout_constraintHorizontal_bias="0.5" />
-
-    <TextView
-        android:id="@+id/driverProfile_Plate"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:text="Placa"
+        android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/driverProfile_Seats"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/driverProfile_Plate"
+        app:layout_constraintHorizontal_bias="1.0" />
+
+    <TextView
+        android:id="@+id/driverProfile_SeatText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Asientos"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/driverProfile_Seats"
         app:layout_constraintTop_toBottomOf="@id/driverProfile_ModelText"/>
 
     <Spinner
         android:id="@+id/driverProfile_Seats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/driverProfile_carPhoto"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/driverProfile_Plate"
-        app:layout_constraintHorizontal_bias="0.5" />
-
-    <TextView
-        android:id="@+id/driverProfile_SeatText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Asientos"
-        app:layout_constraintBottom_toTopOf="@id/driverProfile_carPhoto"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/driverProfile_Seats"
-        app:layout_constraintTop_toBottomOf="@id/driverProfile_Plate"
-        app:layout_constraintHorizontal_bias="0.6"/>
-
-    <ImageView
-        android:id="@+id/driverProfile_carPhoto"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/placeholder_car"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/driverProfile_Seats"/>
+        app:layout_constraintTop_toBottomOf="@id/driverProfile_Model"
+        app:layout_constraintHorizontal_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

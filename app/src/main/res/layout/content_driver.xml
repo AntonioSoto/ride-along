@@ -9,29 +9,31 @@
     tools:showIn="@layout/activity_driver">
 
     <TextView
-        android:id="@+id/textView_AboutYou"
-        android:layout_width="0dp"
+        android:id="@+id/register_AboutYou"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sobre tí"
         android:background="#e5e9f2"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/editText_RegisterPhone"
+        app:layout_constraintBottom_toTopOf="@+id/register_Phone"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
-        android:id="@+id/editText_RegisterPhone"
-        android:layout_width="250dp"
+        android:id="@+id/register_Phone"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:hint="Teléfono"
         android:inputType="phone"
-        app:layout_constraintBottom_toTopOf="@+id/textView_Time"
+        app:layout_constraintBottom_toTopOf="@+id/register_Time1"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView_AboutYou"/>
+        app:layout_constraintTop_toBottomOf="@id/register_AboutYou"/>
 
-    <TextView
+    <!--<TextView
         android:id="@+id/textView_Time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,7 +42,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView_De"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editText_RegisterPhone"/>
+        app:layout_constraintTop_toBottomOf="@id/register_Phone"/>
 
     <TextView
         android:id="@+id/textView_De"
@@ -51,20 +53,22 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView_Time"
-        app:layout_constraintHorizontal_bias="0.4"/>
+        app:layout_constraintHorizontal_bias="0.4"/>-->
 
     <EditText
-        android:id="@+id/editText_RegisterTime1"
-        android:layout_width="100dp"
+        android:id="@+id/register_Time1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:hint="Hora de entrada"
         android:inputType="time"
-        app:layout_constraintBottom_toTopOf="@+id/textView_A"
+        app:layout_constraintBottom_toTopOf="@+id/register_Time2"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/textView_De"
-        app:layout_constraintTop_toBottomOf="@id/textView_Time"
-        app:layout_constraintHorizontal_bias="0.1"/>
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register_Phone" />
 
-    <TextView
+    <!--<TextView
         android:id="@+id/textView_A"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -73,86 +77,97 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView_De"
-        app:layout_constraintHorizontal_bias="0.4"/>
+        app:layout_constraintHorizontal_bias="0.4"/>-->
 
     <EditText
-        android:id="@+id/editText_RegisterTime2"
-        android:layout_width="100dp"
+        android:id="@+id/register_Time2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:hint="Hora de salida"
         android:inputType="time"
-        app:layout_constraintBottom_toTopOf="@+id/textView_AboutCar"
+        app:layout_constraintBottom_toTopOf="@+id/register_AboutCar"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/textView_A"
-        app:layout_constraintTop_toBottomOf="@id/textView_De"
-        app:layout_constraintHorizontal_bias="0.13"/>
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register_Time1"/>
 
     <TextView
-        android:id="@+id/textView_AboutCar"
-        android:layout_width="0dp"
+        android:id="@+id/register_AboutCar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:text="Sobre tu coche"
         android:background="#e5e9f2"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/spinner_Models"
+        app:layout_constraintBottom_toTopOf="@id/register_Plate"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView_A"/>
-
-    <TextView
-        android:id="@+id/textView_Model"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Modelo"
-        app:layout_constraintBottom_toTopOf="@id/editText_RegisterPlate"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/spinner_Models"
-        app:layout_constraintTop_toBottomOf="@id/textView_AboutCar"
-        app:layout_constraintHorizontal_bias="0.6"/>
-
-    <Spinner
-        android:id="@+id/spinner_Models"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/editText_RegisterPlate"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_AboutCar"
-        app:layout_constraintHorizontal_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@id/register_Time2"/>
 
     <EditText
-        android:id="@+id/editText_RegisterPlate"
-        android:layout_width="250dp"
+        android:id="@+id/register_Plate"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:hint="Placa"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/spinner_Seats"
+        app:layout_constraintBottom_toTopOf="@id/register_textViewModel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_Models"/>
-
-    <Spinner
-        android:id="@+id/spinner_Seats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/button_CarPhoto"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editText_RegisterPlate"
-        app:layout_constraintHorizontal_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@id/register_AboutCar"/>
 
     <TextView
-        android:id="@+id/textView_Seats"
+        android:id="@+id/register_textViewModel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Modelo"
+        android:textSize="18dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        app:layout_constraintBottom_toTopOf="@id/register_textViewSeats"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/register_spinnerModels"
+        app:layout_constraintTop_toBottomOf="@id/register_Plate"/>
+
+    <Spinner
+        android:id="@+id/register_spinnerModels"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Asientos"
-        app:layout_constraintBottom_toTopOf="@id/button_CarPhoto"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/spinner_Seats"
-        app:layout_constraintTop_toBottomOf="@id/editText_RegisterPlate"
-        app:layout_constraintHorizontal_bias="0.6"/>
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        app:layout_constraintBottom_toTopOf="@id/register_spinnerSeats"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register_Plate"
+        app:layout_constraintHorizontal_bias="1.0"/>
 
-    <Button
+    <TextView
+        android:id="@+id/register_textViewSeats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Asientos"
+        android:textSize="18dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        app:layout_constraintBottom_toTopOf="@id/button_RegisterContinue"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/register_spinnerSeats"
+        app:layout_constraintTop_toBottomOf="@id/register_textViewModel"/>
+
+    <Spinner
+        android:id="@+id/register_spinnerSeats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_RegisterContinue"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register_spinnerModels"
+        app:layout_constraintHorizontal_bias="1.0"/>
+
+    <!--<Button
         android:id="@+id/button_CarPhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -160,17 +175,17 @@
         app:layout_constraintBottom_toTopOf="@+id/button_RegisterContinue"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_Seats"/>
+        app:layout_constraintTop_toBottomOf="@id/register_spinnerSeats"/>-->
 
     <Button
         android:id="@+id/button_RegisterContinue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Continuar"
-        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_CarPhoto"
+        app:layout_constraintTop_toBottomOf="@id/register_spinnerSeats"
         android:onClick="driverMap"/>
 
 </android.support.constraint.ConstraintLayout>
