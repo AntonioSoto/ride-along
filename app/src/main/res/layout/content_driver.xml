@@ -15,10 +15,23 @@
         android:text="Sobre tí"
         android:background="#e5e9f2"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/register_Phone"
+        app:layout_constraintBottom_toTopOf="@+id/register_Name"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/register_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:hint="Nombre"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/register_Phone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register_AboutYou"/>
 
     <EditText
         android:id="@+id/register_Phone"
@@ -31,29 +44,7 @@
         app:layout_constraintBottom_toTopOf="@+id/register_Time1"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/register_AboutYou"/>
-
-    <!--<TextView
-        android:id="@+id/textView_Time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Horario"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintBottom_toTopOf="@+id/textView_De"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/register_Phone"/>
-
-    <TextView
-        android:id="@+id/textView_De"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="De"
-        app:layout_constraintBottom_toTopOf="@+id/textView_A"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView_Time"
-        app:layout_constraintHorizontal_bias="0.4"/>-->
+        app:layout_constraintTop_toBottomOf="@id/register_Name"/>
 
     <EditText
         android:id="@+id/register_Time1"
@@ -67,17 +58,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/register_Phone" />
-
-    <!--<TextView
-        android:id="@+id/textView_A"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="A"
-        app:layout_constraintBottom_toTopOf="@+id/textView_AboutCar"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView_De"
-        app:layout_constraintHorizontal_bias="0.4"/>-->
 
     <EditText
         android:id="@+id/register_Time2"

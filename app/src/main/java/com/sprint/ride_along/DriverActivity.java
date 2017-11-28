@@ -69,7 +69,7 @@ public class DriverActivity extends AppCompatActivity {
         else if( isHourFormatValid() ){
 
             int internalKey = 0;
-            String name = "Nombre";
+            String name = ((EditText)findViewById(R.id.register_Name)).getText().toString();
             String studentId = getIntent().getStringExtra("studentId");
             String carBrand = models.getSelectedItem().toString();
             String carColor = "Color";
@@ -108,12 +108,14 @@ public class DriverActivity extends AppCompatActivity {
 
     private boolean areTextFieldsEmpty(){
 
+        String name = ((EditText)findViewById(R.id.register_Name)).getText().toString();
         String phone = ((EditText)findViewById(R.id.register_Phone)).getText().toString();
         String time1 = ((EditText)findViewById(R.id.register_Time1)).getText().toString();
         String time2 = ((EditText)findViewById(R.id.register_Time2)).getText().toString();
         String plate = ((EditText)findViewById(R.id.register_Plate)).getText().toString();
 
-        return phone.compareTo("")==0 ||
+        return name.compareTo("")==0 ||
+                phone.compareTo("")==0 ||
                 time1.compareTo("")==0 ||
                 time2.compareTo("")==0 ||
                 plate.compareTo("")==0;
