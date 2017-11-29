@@ -83,7 +83,8 @@ public class DriverMapActivity extends AppCompatActivity implements OnMapReadyCa
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.Theme_AppCompat_Dialog_Alert);
         builder.setTitle("¡Atención!");
-        builder.setMessage("Mantén presionado sobre el mapa para marcar los puntos por donde pasas.");
+        builder.setMessage("Mantén presionado sobre el mapa para marcar los puntos relevantes por" +
+                " donde pasas para llegar a la facultad.");
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // User clicked OK button

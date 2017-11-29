@@ -68,7 +68,7 @@ public class DriverSearchActivity extends AppCompatActivity implements OnMapRead
 
         Toast.makeText(
                 this,
-                "Mentén presionado tu punto de encuentro en el mapa",
+                "Mentén presionado tu domicilio o un punto de interés cerca de tu domicilio",
                 Toast.LENGTH_LONG
         ).show();
     }
