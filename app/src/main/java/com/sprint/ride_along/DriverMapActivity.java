@@ -1,8 +1,10 @@
 package com.sprint.ride_along;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -74,11 +76,20 @@ public class DriverMapActivity extends AppCompatActivity implements OnMapReadyCa
             }
         });
 
-        Toast.makeText(
-                this,
-                "Selecciona tus puntos de encuentro en el mapa",
-                Toast.LENGTH_LONG
-        ).show();
+        showInstructions();
+    }
+
+    private void showInstructions(){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.Theme_AppCompat_Dialog_Alert);
+        builder.setTitle("¡Atención!");
+        builder.setMessage("Mantén presionado sobre el mapa para marcar los puntos por donde pasas.");
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User clicked OK button
+            }
+        });
+        builder.show();
     }
 
     private void selectPoint(LatLng userPoint){
