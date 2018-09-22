@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'ride-along'
+            keyPassword 'Qa14142132'
+            storeFile file('/home/jorge-cano/keystores/android.jks')
+            storePassword 'ridehome'
+        }
+    }
     compileSdkVersion 26
     buildToolsVersion "26.0.3"
     defaultConfig {
@@ -15,6 +23,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
     useLibrary 'org.apache.http.legacy'
@@ -32,8 +41,7 @@ dependencies {
     compile 'com.android.support:design:26.+'
     testCompile 'junit:junit:4.12'
     compile 'com.google.android.gms:play-services-maps:11.6.0'
-    compile "com.googlecode.json-simple:json-simple:1.1"
+    compile 'com.googlecode.json-simple:json-simple:1.1'
     compile 'com.mikhaellopez:circularimageview:3.0.2'
-
-    compile group: 'org.apache.httpcomponents', name: 'httpclient-android', version: '4.3.5.1'
+    compile 'org.apache.httpcomponents:httpclient-android:4.3.5.1'
 }
